@@ -14,9 +14,9 @@ int main(int argc, char *argv[]) {
     	perror("open");
 	}
 
-	char buf[128];
+	char buf[2048];
 	int count = read(fd, buf, sizeof buf);
 
-	write(fd, buf, count);
+	write(STDOUT_FILENO, buf, count);
 	close(fd);
 }
